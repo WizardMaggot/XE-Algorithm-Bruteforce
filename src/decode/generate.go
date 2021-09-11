@@ -18,9 +18,9 @@ func findMinAndMax(a []int) (min int, max int) {
 }
 
 //bruteforces text and check() if string is inside
-func Generate(d []int) func(int, string) {
+func Generate(d []int) func(string) {
 	g, h := findMinAndMax(d)
-	return func(i int, ip string) {
+	return func(ip string) {
 		for i := h - 255; i < g+1; i++ {
 			check.Check(d, i, ip)
 			//lock.Add(1)

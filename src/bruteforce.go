@@ -37,8 +37,8 @@ func main() {
 		fmt.Printf("Key letters?\n> ")
 		fmt.Scanln(&input)
 
-		run, hide := decode.Generate(fin)
+		run := decode.Generate(fin)
 
-		fmt.Println(run, hide)
+		run(input)
 	}
 }
