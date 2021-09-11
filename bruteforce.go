@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/WizardMaggot/bruteforce/primer"
 	"fmt"
 	"os"
 	"strings"
 	"sync"
+
+	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/primer"
 )
 
 //final "primed" string
@@ -34,9 +35,9 @@ func main() {
 		fmt.Printf("Key letters?\n> ")
 		fmt.Scanln(&input)
 
-		fmt.Println("Hi")
+		fmt.Println("fin")
 
-		//decode(input)
+		decode(input)
 	}
 }
 
