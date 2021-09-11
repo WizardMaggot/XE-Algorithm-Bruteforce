@@ -9,11 +9,10 @@ import (
 	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/primer"
 )
 
+var lock sync.WaitGroup
+
 //final "primed" string
 var fin []int
-
-//make sure everything is gone through
-var lock sync.WaitGroup
 
 //basic input and code exec
 func main() {
@@ -37,19 +36,10 @@ func main() {
 
 		fmt.Println("fin")
 
-		decode(input)
-	}
-}
+		g, h := fin.Decode()
 
-//bruteforces text and check() if string is inside
-func decode(ip string) {
-	g, h := findMinAndMax(fin)
-	fmt.Println(g, h)
-	for i := h - 255; i < g+1; i++ {
-		lock.Add(1)
-		go check(i, ip)
+		fmt.Println(g, h)
 	}
-	defer lock.Wait()
 }
 
 //sees if string is in text
@@ -66,15 +56,4 @@ func check(u int, inpc string) {
 	} else {
 		lock.Done()
 	}
-}
-
-//Minimum and max of an array
-func findMinAndMax(a []int) (min int, max int) {
-	fmt.Println(a[0])
-	for _, v := range a {
-		if v < min {
-			min = v
-		}
-	}
-	return a[0], a[1]
 }
