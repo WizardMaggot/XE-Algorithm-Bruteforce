@@ -22,7 +22,7 @@ func Generate(d []int) func(string) {
 	g, h := findMinAndMax(d)
 	return func(ip string) {
 		for i := h - 255; i < g+1; i++ {
-			check.Check(d, i, ip)
+			check.Check(&d, i, ip)
 			//lock.Add(1)
 			//go ck(i, ip)
 		}
