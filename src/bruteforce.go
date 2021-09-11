@@ -6,13 +6,17 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/decode"
 	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/primer"
 )
 
+//make sure everything is gone through
 var lock sync.WaitGroup
 
 //final "primed" string
 var fin []int
+
+//struct input
 
 //basic input and code exec
 func main() {
@@ -34,11 +38,9 @@ func main() {
 		fmt.Printf("Key letters?\n> ")
 		fmt.Scanln(&input)
 
-		fmt.Println("fin")
+		run, hide := decode.Generate(fin)
 
-		g, h := fin.Decode()
-
-		fmt.Println(g, h)
+		fmt.Println(run, hide)
 	}
 }
 
