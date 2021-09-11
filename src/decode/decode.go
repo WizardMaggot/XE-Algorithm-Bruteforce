@@ -4,11 +4,13 @@ import (
 	"fmt"
 )
 
-//make sure everything is gone through
+type pirate struct {
+	arr []int
+}
 
 //bruteforces text and check() if string is inside
-func (d *[]int) Decode() (int, int) {
-	g, h := findMinAndMax(*d)
+func (d *pirate) Decode() (int, int) {
+	g, h := findMinAndMax(d.arr)
 	fmt.Println(g, h)
 	return g, h
 	/*
@@ -21,10 +23,10 @@ func (d *[]int) Decode() (int, int) {
 //Minimum and max of an array
 func findMinAndMax(a []int) (min int, max int) {
 	fmt.Println(a[0])
-	for _, v := range a {
+	/*for _, v := range a {
 		if v < min {
 			min = v
 		}
-	}
+	}*/
 	return a[0], a[1]
 }
