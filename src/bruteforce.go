@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"strings"
 	"sync"
 
 	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/decode"
@@ -41,21 +40,5 @@ func main() {
 		run, hide := decode.Generate(fin)
 
 		fmt.Println(run, hide)
-	}
-}
-
-//sees if string is in text
-func check(u int, inpc string) {
-	var chk []string
-	var see string
-	for c := 0; c < len(fin); c++ {
-		chk = append(chk, string(rune(fin[u])))
-		see = strings.Join(chk, "")
-	}
-	if strings.Contains(see, inpc) {
-		println("Found!\n" + "l")
-		os.Exit(0)
-	} else {
-		lock.Done()
 	}
 }
