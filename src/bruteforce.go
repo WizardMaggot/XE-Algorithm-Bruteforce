@@ -49,8 +49,10 @@ func main() {
 
 //bruteforces text and check() if string is inside
 func run() {
-	for i := pirate.Min(fin) - 255; i < pirate.Max(fin)+255; i++ {
-		lock.Add(1)
+	x := pirate.Min(fin) - 255
+	y := pirate.Max(fin) + 255
+	lock.Add(y - x)
+	for i := x; i < y; i++ {
 		go check(i, input)
 	}
 }
