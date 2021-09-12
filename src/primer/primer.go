@@ -5,39 +5,37 @@ import (
 	"strings"
 )
 
+var fin []int
+var conj []int
+
 //every 3 numbers become one in an array
 func Prime(st string) []int {
-	var temp []int
-	var dc int
-
-	var fin []int
-
-	//every line
-	ln := strings.Split(st, "\n")
-	for l := range ln {
-		//every .
-		ch := strings.Split(ln[l], ".")
-		//every
-		for c := range ch {
-			if ch[c] != "" {
-				nu, _ := strconv.Atoi(ch[c])
-				temp = append(temp, nu)
-				dc += 1
-				if dc%3 == 0 {
-					fin = append(fin, sum(temp))
-					temp = nil
-				}
+	//remove all new lines
+	st = strings.ReplaceAll(st, "\r\n", "")
+	st = strings.ReplaceAll(st, " ", "")
+	ch := strings.Split(st, ".")
+	//individual numbers to array
+	for _, i := range ch {
+		if i != "" {
+			j, err := strconv.Atoi(i)
+			if err != nil {
+				panic(err)
 			}
+			conj = append(conj, j)
 		}
+	}
+	//add every 3 numbers
+	z := len(conj) / 3
+	var p int
+	for dc := 0; dc < z; dc++ {
+		fin = append(fin, sum(conj, p))
+		p += 1
 	}
 	return fin
 }
 
 //finds the sum of an array
-func sum(array []int) int {
-	result := 0
-	for _, v := range array {
-		result += v
-	}
+func sum(array []int, x int) int {
+	result := array[0+3*x] + array[1+3*x] + array[2+3*x]
 	return result
 }
