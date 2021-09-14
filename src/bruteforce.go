@@ -43,7 +43,9 @@ func main() {
 		fmt.Scanln(&input)
 
 		run()
-		defer lock.Wait()
+		defer fmt.Println("Failed to find sequence.")
+
+		lock.Wait()
 	}
 }
 
@@ -53,20 +55,20 @@ func run() {
 	y := pirate.Max(fin) + 255
 	lock.Add(y - x)
 	for i := x; i < y; i++ {
-		go check(i, input)
+		go check(i)
 	}
 }
 
 //sees if string is in text
-func check(rot int, inpc string) {
+func check(rot int) {
 	var chk []string
 	var see string
 	for c := 0; c < len(fin); c++ {
 		chk = append(chk, string(rune(fin[c]-rot)))
 		see = strings.Join(chk, "")
 	}
-	if strings.Contains(see, inpc) {
-		fmt.Println(see)
+	if strings.Contains(see, input) {
+		fmt.Println("Found!\n___\n" + see)
 		os.Exit(0)
 	} else {
 		lock.Done()

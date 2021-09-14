@@ -21,3 +21,9 @@ func Max(values []int) int {
 	}
 	return max
 }
+
+//finds the sum of an array, x is a pointer
+func Sumarr(array []int, x *int) int {
+	result := array[0+3**x] + array[1+3**x] + array[2+3**x]
+	return result
+}

@@ -3,6 +3,8 @@ package primer
 import (
 	"strconv"
 	"strings"
+
+	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/pirate"
 )
 
 var fin []int
@@ -14,28 +16,20 @@ func Prime(st string) []int {
 	st = strings.ReplaceAll(st, "\r\n", "")
 	st = strings.ReplaceAll(st, " ", "")
 	ch := strings.Split(st, ".")
+
 	//individual numbers to array
 	for _, i := range ch {
 		if i != "" {
-			j, err := strconv.Atoi(i)
+			n, err := strconv.Atoi(i)
 			if err != nil {
 				panic(err)
 			}
-			conj = append(conj, j)
+			conj = append(conj, n)
 		}
 	}
 	//add every 3 numbers
-	z := len(conj) / 3
-	var p int
-	for dc := 0; dc < z; dc++ {
-		fin = append(fin, sum(conj, p))
-		p += 1
+	for dc := 0; dc < len(conj)/3; dc++ {
+		fin = append(fin, pirate.Sumarr(conj, &dc))
 	}
 	return fin
-}
-
-//finds the sum of an array
-func sum(array []int, x int) int {
-	result := array[0+3*x] + array[1+3*x] + array[2+3*x]
-	return result
 }
