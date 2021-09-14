@@ -29,7 +29,8 @@ func Prime(st string) []int {
 	}
 	//add every 3 numbers
 	for dc := 0; dc < len(conj)/3; dc++ {
-		fin = append(fin, pirate.Sumarr(conj, &dc))
+		//faster to pass slices
+		fin = append(fin, pirate.Sumarr(conj[0+(3*dc):3+(3*dc)]))
 	}
 	return fin
 }
