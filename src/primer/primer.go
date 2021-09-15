@@ -13,7 +13,7 @@ var conj []int
 //every 3 numbers become one in an array
 func Prime(st string) []int {
 	//remove all new lines
-	st = strings.ReplaceAll(st, "\r\n", "")
+	st = strings.ReplaceAll(st, "\n", "")
 	st = strings.ReplaceAll(st, " ", "")
 	ch := strings.Split(st, ".")
 
