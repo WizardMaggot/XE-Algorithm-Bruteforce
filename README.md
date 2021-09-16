@@ -9,7 +9,7 @@ Run built executable in the same path as text file or you'll have to paste the e
 
 ## How to build
 Install golang
-type `go build bruteforce.go` inside terminal
+type `go build bruteforce.go` inside terminal.
 An executable will be produced.
 
 ## My thoughts
