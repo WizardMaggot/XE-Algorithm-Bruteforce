@@ -1,10 +1,7 @@
 # XE Encryption Bruteforce
 ## Why did I make this?
 I'm just messin around. Feel free to look around.
-<<<<<<< HEAD
-=======
 Windows only reads files using "\r\n", Linux only reads "\n". (newlines)
->>>>>>> 099b958ff6ca62ecbd3af9bb1aa80c4e91d978c3
 
 ## How to use
 Only reads files that have "\n" as new line becuase windows...
