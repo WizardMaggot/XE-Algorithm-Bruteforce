@@ -1,3 +1,3 @@
-module github.com/WizardMaggot/XE-Algorithm-Bruteforce
+module WizardMaggot/XE-Algorithm-Bruteforce
 
 go 1.17

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/pirate"
-	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/primer"
+	"WizardMaggot/XE-Algorithm-Bruteforce/pirate"
+	"WizardMaggot/XE-Algorithm-Bruteforce/primer"
 )
 
 //make sure everything is gone through

@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/WizardMaggot/XE-Algorithm-Bruteforce/pirate"
+	"WizardMaggot/XE-Algorithm-Bruteforce/pirate"
 )
 
 var fin []int
